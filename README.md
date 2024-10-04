@@ -6,7 +6,7 @@
 =======
 [What is Games Engines?](https://bryanduggan.org/2024/09/05/what-is-games-engines/)
 
-[DISCORD](https://discord.gg/s6ZT5CDS)
+[Join the DISCORD](https://discord.gg/mD35MphU)
 
 ```
 Welcome to the Metaverse
@@ -16,11 +16,13 @@ Welcome to the Metaverse
 
 ## Assessment
 - 20% Weekly git commits
-- 30% Assignment
+- [30% Assignment](assignment.md)
 - 50% Exam 
 
-## Week 2
+## Week 2 - Godot Transforms
+- [Recording](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/ERYblkFIO5dBvuNzpsJITcMBm9EHO1j4XdIJ59m5A3T7CQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=UinNs8)
 
+- GodotCon 2024 Program 
 
 ### Lab 
 
