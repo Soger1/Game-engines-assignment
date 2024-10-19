@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwx0dh8b1knct"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_rlyby"]
+[ext_resource type="PackedScene" uid="uid://bxinf7ao4sxgc" path="res://XR_Origin.tscn" id="2_ymjq8"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_quhjl"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_unxqd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xao1u"]
+albedo_color = Color(0, 0.19, 0, 1)
+normal_scale = -3.67
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_rlyby")
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000824928, 0.0228252, -0.00316048)
+shape = SubResource("WorldBoundaryShape3D_quhjl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/CollisionShape3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.00111794, 5.96046e-08, 0.00429106)
+mesh = SubResource("PlaneMesh_unxqd")
+surface_material_override/0 = SubResource("StandardMaterial3D_xao1u")
+
+[node name="XROrigin3D" parent="." instance=ExtResource("2_ymjq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.477391, 0)
