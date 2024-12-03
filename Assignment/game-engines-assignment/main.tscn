@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://main.gd" id="1_rlyby"]
 [ext_resource type="PackedScene" uid="uid://bxinf7ao4sxgc" path="res://XR_Origin.tscn" id="2_ymjq8"]
-[ext_resource type="PackedScene" uid="uid://cd8b7lchmo6xm" path="res://The Cube.tscn" id="3_jyft7"]
+[ext_resource type="PackedScene" uid="uid://0x2746afqdfo" path="res://theremin.tscn" id="3_sj5g4"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_quhjl"]
 
@@ -42,5 +42,5 @@ mesh = SubResource("BoxMesh_qtaf7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_ljymk")
 
-[node name="PickableObject" parent="." instance=ExtResource("3_jyft7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.440027, -0.494523)
+[node name="MeshInstance3D2" parent="." instance=ExtResource("3_sj5g4")]
+transform = Transform3D(0.889477, 0, 0, 0, 0.0420973, 0, 0, 0, 0.19963, -0.0335451, 0.344906, -0.557583)

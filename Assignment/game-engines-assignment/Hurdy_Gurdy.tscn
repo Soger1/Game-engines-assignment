@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://deipaw78xx7h6"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_2k8dp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1e1to"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_es5hv"]
+height = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uaocm"]
+albedo_color = Color(0.0791848, 0.515723, 0.740671, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kquhk"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yp82q"]
+top_radius = 0.2
+bottom_radius = 0.2
+height = 0.1
+
+[node name="PickableObject" instance=ExtResource("1_2k8dp")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_1e1to")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
+mesh = SubResource("CylinderMesh_es5hv")
+surface_material_override/0 = SubResource("StandardMaterial3D_uaocm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="2"]
+transform = Transform3D(0.30188, 0, 0, 0, 0.26964, 0, 0, 0, 1.00919, 0, 0, -0.544483)
+mesh = SubResource("BoxMesh_kquhk")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, -0.0545667, -0.99851, 0, 0.99851, -0.0545667, -0.00103617, 0, 0.198969)
+mesh = SubResource("CylinderMesh_yp82q")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." index="4"]
