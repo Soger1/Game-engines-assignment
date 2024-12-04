@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://main.gd" id="1_rlyby"]
 [ext_resource type="PackedScene" uid="uid://bxinf7ao4sxgc" path="res://XR_Origin.tscn" id="2_ymjq8"]
-[ext_resource type="PackedScene" uid="uid://0x2746afqdfo" path="res://theremin.tscn" id="3_sj5g4"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_quhjl"]
 
@@ -12,9 +11,13 @@
 albedo_color = Color(0, 0.19, 0, 1)
 normal_scale = -3.67
 
-[sub_resource type="BoxMesh" id="BoxMesh_qtaf7"]
+[sub_resource type="Environment" id="Environment_2l0s3"]
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 9.84
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ljymk"]
+[sub_resource type="BoxMesh" id="BoxMesh_5f7r0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ytx7v"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_rlyby")
@@ -31,16 +34,15 @@ mesh = SubResource("PlaneMesh_unxqd")
 surface_material_override/0 = SubResource("StandardMaterial3D_xao1u")
 
 [node name="XROrigin3D" parent="." instance=ExtResource("2_ymjq8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.477391, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.618301, 0.0993809, 0.815983)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2l0s3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, -0.192126, -0.600747)
-mesh = SubResource("BoxMesh_qtaf7")
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1, 1, 0)
+mesh = SubResource("BoxMesh_5f7r0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("BoxShape3D_ljymk")
-
-[node name="MeshInstance3D2" parent="." instance=ExtResource("3_sj5g4")]
-transform = Transform3D(0.889477, 0, 0, 0, 0.0420973, 0, 0, 0, 0.19963, -0.0335451, 0.344906, -0.557583)
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1, 0)
+mesh = SubResource("BoxMesh_ytx7v")

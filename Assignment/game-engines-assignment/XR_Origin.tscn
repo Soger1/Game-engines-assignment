@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxinf7ao4sxgc"]
+[gd_scene load_steps=6 format=3 uid="uid://bxinf7ao4sxgc"]
 
+[ext_resource type="Script" path="res://xr_origin.gd" id="1_5a283"]
 [ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="1_aka20"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="2_p7s2f"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="2_qyuka"]
 
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_863o1"]
+
 [node name="XROrigin3D" type="XROrigin3D"]
+script = ExtResource("1_5a283")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
 
@@ -22,3 +26,7 @@ tracker = &"right_hand"
 [node name="RightHand" parent="Right" instance=ExtResource("2_qyuka")]
 
 [node name="FunctionPickup" parent="Right" instance=ExtResource("2_p7s2f")]
+
+[node name="AudioStreamGenerator" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamGenerator_863o1")
+volume_db = -10.306

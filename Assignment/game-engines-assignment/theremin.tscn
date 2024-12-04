@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://0x2746afqdfo"]
+[gd_scene load_steps=6 format=3 uid="uid://0x2746afqdfo"]
+
+[ext_resource type="Script" path="res://theremin.gd" id="1_h08f3"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_gfhqy"]
 
@@ -11,6 +13,7 @@
 [node name="MeshInstance3D" type="MeshInstance3D"]
 transform = Transform3D(1.9963, 0, 0, 0, 0.0998152, 0, 0, 0, 0.19963, 0, 0, 0)
 mesh = SubResource("BoxMesh_gfhqy")
+script = ExtResource("1_h08f3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
