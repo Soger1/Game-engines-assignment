@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwx0dh8b1knct"]
+[gd_scene load_steps=12 format=3 uid="uid://cwx0dh8b1knct"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_rlyby"]
 [ext_resource type="PackedScene" uid="uid://bxinf7ao4sxgc" path="res://XR_Origin.tscn" id="2_ymjq8"]
+[ext_resource type="Material" uid="uid://civc17m34m7h3" path="res://metal.tres" id="3_xu104"]
+[ext_resource type="Material" uid="uid://c3qgaym8raqgt" path="res://wood.tres" id="4_wm2gl"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_quhjl"]
 
@@ -11,13 +13,13 @@
 albedo_color = Color(0, 0.19, 0, 1)
 normal_scale = -3.67
 
-[sub_resource type="Environment" id="Environment_2l0s3"]
-ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 9.84
+[sub_resource type="CylinderMesh" id="CylinderMesh_gcy5b"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_5f7r0"]
+[sub_resource type="TorusMesh" id="TorusMesh_glfri"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_ytx7v"]
+[sub_resource type="BoxMesh" id="BoxMesh_xe24j"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_a1nyc"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_rlyby")
@@ -36,13 +38,27 @@ surface_material_override/0 = SubResource("StandardMaterial3D_xao1u")
 [node name="XROrigin3D" parent="." instance=ExtResource("2_ymjq8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.618301, 0.0993809, 0.815983)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_2l0s3")
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1, 1, 0)
-mesh = SubResource("BoxMesh_5f7r0")
+transform = Transform3D(0.0623072, 0, 0, 0, 0.437773, 0, 0, 0, 0.0576063, -1, 1.5, 0)
+mesh = SubResource("CylinderMesh_gcy5b")
+surface_material_override/0 = ExtResource("3_xu104")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1, 0)
-mesh = SubResource("BoxMesh_ytx7v")
+transform = Transform3D(0.216739, 0, 0, 0, 0.2, 0, 0, 0, 0.116774, 0, 1, 0)
+mesh = SubResource("TorusMesh_glfri")
+surface_material_override/0 = ExtResource("3_xu104")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.216739, 0, 0, 0, 0.2, 0, 0, 0, 0.116774, -0.99788, 1, 0)
+mesh = SubResource("BoxMesh_xe24j")
+surface_material_override/0 = ExtResource("4_wm2gl")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.799734, 0, 0, 0, 0.0581473, 0, 0, 0, 0.116774, -0.52623, 1, 0)
+mesh = SubResource("BoxMesh_xe24j")
+surface_material_override/0 = ExtResource("4_wm2gl")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0615258, 0, 0, 0, 0.597069, 0, 0, 0, 0.0459527, -0.52623, 0.413988, 0)
+mesh = SubResource("CylinderMesh_a1nyc")
+surface_material_override/0 = ExtResource("3_xu104")
