@@ -1,8 +1,8 @@
 # Project Title
 
-Name:
+Name: Ethan Holohan
 
-Student Number: 
+Student Number: C20322553
 
 Class Group:
 
