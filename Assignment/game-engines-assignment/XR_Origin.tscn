@@ -1,12 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxinf7ao4sxgc"]
+[gd_scene load_steps=10 format=3 uid="uid://bxinf7ao4sxgc"]
 
 [ext_resource type="Script" path="res://xr_origin.gd" id="1_5a283"]
 [ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="1_aka20"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="2_p7s2f"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="2_qyuka"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="4_ccrhi"]
 [ext_resource type="Script" path="res://audio_stream_generator.gd" id="5_ijjc3"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="8_5kbpu"]
+[ext_resource type="PackedScene" uid="uid://ckrfum1eykgte" path="res://ui.tscn" id="8_nxecj"]
 
-[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_863o1"]
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_tev5v"]
 
 [node name="XROrigin3D" type="XROrigin3D"]
 script = ExtResource("1_5a283")
@@ -20,6 +23,12 @@ tracker = &"left_hand"
 
 [node name="FunctionPickup" parent="Left" instance=ExtResource("2_p7s2f")]
 
+[node name="FunctionPointer" parent="Left" instance=ExtResource("4_ccrhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000494331, 0, 5.57303e-06)
+show_laser = 2
+laser_length = 1
+collision_mask = 5242881
+
 [node name="Right" type="XRController3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00406337, 2.38419e-07, -0.00221968)
 tracker = &"right_hand"
@@ -29,6 +38,14 @@ tracker = &"right_hand"
 [node name="FunctionPickup" parent="Right" instance=ExtResource("2_p7s2f")]
 
 [node name="AudioStreamGenerator" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamGenerator_863o1")
+stream = SubResource("AudioStreamGenerator_tev5v")
 volume_db = -10.306
 script = ExtResource("5_ijjc3")
+
+[node name="Viewport2Din3D" parent="." instance=ExtResource("8_5kbpu")]
+transform = Transform3D(0.000600378, 0, 0.000799716, 0, 0.001, 0, -0.000799716, 0, 0.000600378, -1.02234, 0.878302, -0.329872)
+screen_size = Vector2(1280, 768)
+scene = ExtResource("8_nxecj")
+viewport_size = Vector2(640, 360)
+unshaded = true
+scene_properties_keys = PackedStringArray()

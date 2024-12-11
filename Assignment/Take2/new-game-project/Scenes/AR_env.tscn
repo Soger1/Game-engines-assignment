@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://hbt85l2k48fa"]
+
+[ext_resource type="Script" path="res://scripts/pass_setup.gd" id="1_a2pyq"]
+
+[node name="XROrigin3D" type="XROrigin3D"]
+script = ExtResource("1_a2pyq")
+
+[node name="XRCamera3D" type="XRCamera3D" parent="."]

@@ -18,7 +18,8 @@ var sample_rate = 44100  # Standard audio sample rate
 # Vibrato variables
 var vibrato_speed = 30.0  # Vibrato speed in Hz
 var vibrato_depth = 30.0  # Vibrato depth in Hz
-var vibrato_phase = 0.0
+var vibrato_phase = 1.0
+
 
 func _ready():
 	# Setup AudioStreamGenerator

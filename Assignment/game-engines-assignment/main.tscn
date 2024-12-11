@@ -62,3 +62,6 @@ surface_material_override/0 = ExtResource("4_wm2gl")
 transform = Transform3D(0.0615258, 0, 0, 0, 0.597069, 0, 0, 0, 0.0459527, -0.52623, 0.413988, 0)
 mesh = SubResource("CylinderMesh_a1nyc")
 surface_material_override/0 = ExtResource("3_xu104")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.555203, 2.2309, 0.120517)
