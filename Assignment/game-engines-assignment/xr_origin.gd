@@ -5,6 +5,7 @@ var volume_range = Vector2(0, 1)     # Volume range
 @onready var audio_stream_player = $AudioStreamGenerator
 @onready var left_controller = $Left
 @onready var right_controller = $Right
+@onready var store = get_node("/root/Sliderstore")
 
 var current_pitch = 440.0  # A4 note
 var current_volume = 0.0
@@ -46,12 +47,14 @@ func _process(delta):
 	var left_pos = left_controller.global_transform.origin
 	var right_pos = right_controller.global_transform.origin
 	
+	vibrato_depth = store.vib_slider
+	
 	# Update pitch - highest pitch when closest to the rod
 	# Invert the lerp to make pitch highest when closest to the rod
 	if left_pos.x > pitch_rod_pos.x:
 		current_pitch = lerp(
-			pitch_range.y,  # Highest pitch
-			pitch_range.x,  # Lowest pitch
+			pitch_range.y+store.pitch_slider,  # Highest pitch
+			pitch_range.x+store.pitch_slider,  # Lowest pitch
 			clamp(left_pos.x-pitch_rod_pos.x, 0, 1)
 		)
 	

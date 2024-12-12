@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckrfum1eykgte"]
+[gd_scene load_steps=3 format=3 uid="uid://ckrfum1eykgte"]
 
-[ext_resource type="Script" path="res://vibrato.gd" id="1_qe3da"]
+[ext_resource type="Script" path="res://ui.gd" id="1_7u7dk"]
+
+[sub_resource type="GDScript" id="GDScript_4u77n"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -13,6 +15,7 @@ offset_right = -30.0
 offset_bottom = -34.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7u7dk")
 
 [node name="vibrato" type="HSlider" parent="."]
 layout_mode = 0
@@ -20,13 +23,16 @@ offset_left = 89.0
 offset_top = 115.0
 offset_right = 533.0
 offset_bottom = 135.0
-script = ExtResource("1_qe3da")
+max_value = 1000.0
+script = SubResource("GDScript_4u77n")
 
 [node name="pitch" type="HSlider" parent="."]
+layout_mode = 0
 offset_left = 92.0
 offset_top = 284.0
 offset_right = 539.0
 offset_bottom = 304.0
+max_value = 1000.0
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
