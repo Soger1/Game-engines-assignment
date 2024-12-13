@@ -24,25 +24,32 @@ the theremin works by using the godot audio stream generator to create a sine wa
 
 alot of the VR elements such as the hands and the pointer are taken from the XRtools kit that you can download for godot.
 
-the pitch and vibrato can be adjusted using the two sliders next to the theremin, these sliders use the 3d2dviewport
+the pitch and vibrato can be adjusted using the two sliders next to the theremin, these are in the 3d2d viewport which uses the 2d ui to contain the sliders
 
+the global varible is used to contain the values of the sliders and the current pitch, these are used to control the responsive lighting from the theremin.
 
+the main scene contains all the static elements like the theremin model and the floor
 
 
 # List of classes/assets in the project
 
 | Class/asset | Source |
 |-----------|-----------|
-| MyClass.cs | Self written |
-| MyClass1.cs | Modified from [reference]() |
-| MyClass2.cs | From [reference]() |
+| XR_Origin.gd | Modified from Claude.AI, [2], [3], [4]|
+| sliderstore.gd | Modified from [3] |
+| ui.gd | Modifided from [2], Claude.AI |
+| main.gd | Modified from [4], Claude.AI |
 
 # References
 [1] https://doctormix.com/blog/the-theremin-explained/
-* Item 1
-* Item 2
+[2] https://www.youtube.com/watch?v=lGZ2nAK-HiU&list=PLfX6C2dxVyLxXl3gJwakzdqRaV7WKlqFR&index=6
+[3] https://www.youtube.com/watch?v=sc-tEPdLZhk
+[4] https://www.youtube.com/watch?v=fxZoXfX4oBo&list=PLfX6C2dxVyLxXl3gJwakzdqRaV7WKlqFR&index=1
+
 
 # What I am most proud of in the assignment
+
+im happy that i managed to replicate a theremin to a good degree, and that it functions mostly as intended, however i couldnt get the think to sound like an actaul real theremin which sounds more like a violin or string instrument 
 
 # What I learned
 
