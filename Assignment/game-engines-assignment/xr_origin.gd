@@ -48,6 +48,7 @@ func _process(delta):
 	var right_pos = right_controller.global_transform.origin
 	
 	vibrato_depth = store.vib_slider
+	vibrato_speed = store.vib_slider
 	
 	# Update pitch - highest pitch when closest to the rod
 	# Invert the lerp to make pitch highest when closest to the rod
@@ -82,6 +83,6 @@ func _process(delta):
 		phase += (2 * PI * pitch_with_vibrato) / sample_rate
 		if phase > 2 * PI:
 			phase -= 2 * PI
-		
+		store.set_cur_pitch(pitch_with_vibrato)
 		var sample = sin(phase) * current_volume
 		playback.push_frame(Vector2(sample, sample))
