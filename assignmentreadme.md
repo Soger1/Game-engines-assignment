@@ -4,7 +4,7 @@ Name: Ethan Holohan
 
 Student Number: C20322553
 
-Class Group:
+Class Group: Year 4
 
 Video:
 
@@ -12,10 +12,15 @@ Video:
 
 # Description of the project
 
+My project was to try create a Theremin instrument in VR
+
 # Instructions for use
 
+Theremins are pretty simple to use but hard to master, you control the pitch by moving your left hand further or closer to the left pole and the volume by raising your right hand higher or lower
 
 # How it works
+
+
 
 # List of classes/assets in the project
 
