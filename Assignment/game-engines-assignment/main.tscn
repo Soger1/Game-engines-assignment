@@ -31,7 +31,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000824928, 0.0228252, -0.0
 shape = SubResource("WorldBoundaryShape3D_quhjl")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/CollisionShape3D"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.00111794, 5.96046e-08, 0.00429106)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.537032, 5.96046e-08, 0.00429106)
 mesh = SubResource("PlaneMesh_unxqd")
 surface_material_override/0 = SubResource("StandardMaterial3D_xao1u")
 
@@ -65,3 +65,4 @@ surface_material_override/0 = ExtResource("3_xu104")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.555203, 2.2309, 0.120517)
+light_color = Color(0.71, 0, 0, 1)
