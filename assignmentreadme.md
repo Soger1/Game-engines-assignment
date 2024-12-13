@@ -1,10 +1,10 @@
-# Project Title
+# VR Theremin
 
 Name: Ethan Holohan
 
 Student Number: C20322553
 
-Class Group: Year 4
+Class Group: Year 4 Compsci
 
 Video:
 
@@ -20,6 +20,13 @@ Theremins are pretty simple to use but hard to master, you control the pitch by 
 
 # How it works
 
+the theremin works by using the godot audio stream generator to create a sine wave which is then output, the pitch range is limited to that of a theremin to try keep the sound similiar[1] (5 octaves roughly translates to the 65 - 2093 range used, all the audio generation and hand positioning is handled in the XR Origin scene, this is the scene where i kept all the vr elements in.
+
+alot of the VR elements such as the hands and the pointer are taken from the XRtools kit that you can download for godot.
+
+the pitch and vibrato can be adjusted using the two sliders next to the theremin, these sliders use the 3d2dviewport
+
+
 
 
 # List of classes/assets in the project
@@ -31,6 +38,7 @@ Theremins are pretty simple to use but hard to master, you control the pitch by 
 | MyClass2.cs | From [reference]() |
 
 # References
+[1] https://doctormix.com/blog/the-theremin-explained/
 * Item 1
 * Item 2
 
