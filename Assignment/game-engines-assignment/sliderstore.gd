@@ -2,6 +2,7 @@ extends Node
 
 var pitch_slider: float = 0.0
 var vib_slider:float =0.0
+var vib_slider2:float =0.0
 var current_pitch:float =0.0
 
 
@@ -16,6 +17,9 @@ func _process(delta: float) -> void:
 
 func set_vib(value: float):
 	vib_slider = value
+	
+func set_vib2(value: float):
+	vib_slider2 = value
 	
 func set_pitch(value: float):
 	pitch_slider = value

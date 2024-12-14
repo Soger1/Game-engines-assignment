@@ -23,25 +23,26 @@ offset_left = 89.0
 offset_top = 115.0
 offset_right = 533.0
 offset_bottom = 135.0
-max_value = 1000.0
+min_value = 1.0
+step = 0.5
+value = 1.0
 script = SubResource("GDScript_4u77n")
 
 [node name="pitch" type="HSlider" parent="."]
 layout_mode = 0
-offset_left = 92.0
-offset_top = 284.0
-offset_right = 539.0
-offset_bottom = 304.0
+offset_left = 93.0
+offset_top = 205.0
+offset_right = 540.0
+offset_bottom = 225.0
 max_value = 1000.0
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 99.0
-offset_top = 252.0
-offset_right = 139.0
-offset_bottom = 275.0
-text = "Pitch
-"
+offset_left = 97.0
+offset_top = 158.0
+offset_right = 178.0
+offset_bottom = 181.0
+text = "Weirdness"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
@@ -49,5 +50,20 @@ offset_left = 101.0
 offset_top = 75.0
 offset_right = 158.0
 offset_bottom = 98.0
-text = "Vibrato
-"
+text = "Distort"
+
+[node name="Label2" type="Label" parent="Label2"]
+offset_left = -1.0
+offset_top = 178.0
+offset_right = 95.0
+offset_bottom = 201.0
+text = "Max Volume"
+
+[node name="vibrato2" type="HSlider" parent="."]
+offset_left = 101.0
+offset_top = 303.0
+offset_right = 548.0
+offset_bottom = 323.0
+min_value = 0.5
+step = 0.5
+value = 10.0
