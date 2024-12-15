@@ -8,7 +8,7 @@ Class Group: Year 4 Compsci
 
 Video:
 
-[![YouTube]([https://www.youtube.com/watch?v=J2kHSSFA4NU])])
+https://youtu.be/FAjRk-Hhtfg
 
 # Description of the project
 
