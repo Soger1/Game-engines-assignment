@@ -55,6 +55,5 @@ im happy that i managed to replicate a theremin to a good degree, and that it fu
 
 i learned alot about creating vr apps on godot and about modifiying sine waves and instruments 
 
-# Proposal submitted earlier can go here:
 
 
