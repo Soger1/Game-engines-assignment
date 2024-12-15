@@ -17,9 +17,9 @@ var phase = 0.0
 var sample_rate = 44100  # Standard audio sample rate
 
 # Vibrato variables
-var vibrato_speed = 30.0  # Vibrato speed in Hz
-var vibrato_depth = 30.0  # Vibrato depth in Hz
-var vibrato_phase = 1.0
+var vibrato_amp = 0.0  # Vibrato speed in Hz
+var vibrato_freq = 0.0  # Vibrato depth in Hz
+var vibrato_phase = 0.0
 
 
 func _ready():
@@ -47,17 +47,16 @@ func _process(delta):
 	var left_pos = left_controller.global_transform.origin
 	var right_pos = right_controller.global_transform.origin
 	
-	vibrato_depth = store.vib_slider
-	vibrato_speed = store.vib_slider
 	
 	# Update pitch - highest pitch when closest to the rod
 	# Invert the lerp to make pitch highest when closest to the rod
 	if left_pos.x > pitch_rod_pos.x:
 		current_pitch = lerp(
-			pitch_range.y+store.pitch_slider,  # Highest pitch
-			pitch_range.x+store.pitch_slider,  # Lowest pitch
-			clamp(left_pos.x-pitch_rod_pos.x, 0, 1)
+			pitch_range.y + store.pitch_slider,  # Highest pitch
+			pitch_range.x + store.pitch_slider,  # Lowest pitch
+			clamp(left_pos.x-pitch_rod_pos.x, 0.4, 1)
 		)
+		
 	
 	# Update volume - lowest when closest to the volume controller
 	if right_pos.y > volume_controller_pos.y:
@@ -66,12 +65,16 @@ func _process(delta):
 		current_volume = (distance_to_volume / 2.0)
 		current_volume = clamp(current_volume, volume_range.x, volume_range.y)
 	
+	vibrato_amp = store.vib_slider2
+	vibrato_freq = store.vib_slider
+	
+	
 	# Vibrato calculation
-	vibrato_phase += (2 * PI * vibrato_speed) / sample_rate
+	vibrato_phase += delta * vibrato_freq * 2 * PI
 	if vibrato_phase > 2 * PI:
 		vibrato_phase -= 2 * PI
-	
-	var vibrato_effect = sin(vibrato_phase) * vibrato_depth
+		
+	var vibrato_effect = sin(vibrato_phase) * vibrato_amp
 	var pitch_with_vibrato = current_pitch + vibrato_effect
 	
 	# Fill audio buffer
@@ -83,6 +86,11 @@ func _process(delta):
 		phase += (2 * PI * pitch_with_vibrato) / sample_rate
 		if phase > 2 * PI:
 			phase -= 2 * PI
+		var sine_wave = sin(phase)
+		#var tri_wave = 2.0 * abs(1.0 - fmod(phase / (2 * PI), 2.0)) - 1.0
+		var sample = sine_wave * current_volume
+		
+		sample =  tanh(sample * 2.0) / 2.0
 		store.set_cur_pitch(pitch_with_vibrato)
-		var sample = sin(phase) * current_volume
 		playback.push_frame(Vector2(sample, sample))
+		
