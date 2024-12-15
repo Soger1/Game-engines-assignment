@@ -9,8 +9,8 @@ extends Control
 func _ready() -> void:
 	
 	pitch_slider.connect("value_changed", Callable(self,"pitch_change"))
-	pitch_slider.connect("value_changed", Callable(self,"vib_change"))
-	pitch_slider.connect("value_changed", Callable(self,"vib_change2"))
+	vib_slider.connect("value_changed", Callable(self,"vib_change"))
+	vib2_slider.connect("value_changed", Callable(self,"vib_change2"))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
