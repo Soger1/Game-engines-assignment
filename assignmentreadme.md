@@ -20,15 +20,15 @@ Theremins are pretty simple to use but hard to master, you control the pitch by 
 
 # How it works
 
-the theremin works by using the godot audio stream generator to create a sine wave which is then output, the pitch range is limited to that of a theremin to try keep the sound similiar[1] (5 octaves roughly translates to the 65 - 2093 range used, all the audio generation and hand positioning is handled in the XR Origin scene, this is the scene where i kept all the vr elements in.
+the theremin works by using the godot audio stream generator to create a sine wave which is then output, the pitch range is limited to that of a theremin to try keep the sound similiar[1] (5 octaves roughly translates to the 65 - 2093 range used, all the audio generation and hand positioning is handled in the XR Origin scene, this is the scene where i kept all the vr elements in, the postion of the pitch rod and the volume antenne are hard coded, the basic model of the theremin is just for show
 
-alot of the VR elements such as the hands and the pointer are taken from the XRtools kit that you can download for godot.
+alot of the VR elements such as the hands and the pointer are taken from the XRtools kit that you can download for godot, XR tools was very useful and enabled alot of the functionality of the project
 
 the pitch and vibrato can be adjusted using the two sliders next to the theremin, these are in the 3d2d viewport which uses the 2d ui to contain the sliders
 
 the global varible is used to contain the values of the sliders and the current pitch, these are used to control the responsive lighting from the theremin.
 
-the main scene contains all the static elements like the theremin model and the floor
+the main scene contains all the static elements like the theremin model and the floor aswell as the reactive light, the reactive light gets the current pitch from the global class and uses it to set the hue of the light
 
 
 # List of classes/assets in the project
@@ -49,7 +49,7 @@ the main scene contains all the static elements like the theremin model and the 
 
 # What I am most proud of in the assignment
 
-im happy that i managed to replicate a theremin to a good degree, and that it functions mostly as intended, however i couldnt get the think to sound like an actaul real theremin which sounds more like a violin or string instrument 
+im happy that i managed to replicate a theremin to a good degree, and that it functions mostly as intended, however i couldnt get the think to sound like an actaul real theremin which sounds more like a violin or string instrument.
 
 # What I learned
 
